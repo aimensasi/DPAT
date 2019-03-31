@@ -2,7 +2,7 @@ package Stores;
 
 import java.util.concurrent.atomic.AtomicInteger;
 
-public class Store {
+public abstract class Store {
 
 	private static final AtomicInteger mIdCount = new AtomicInteger(0);
 

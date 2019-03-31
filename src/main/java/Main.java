@@ -1,3 +1,4 @@
+import Factory.StoreAbstractFactory;
 import Stores.*;
 
 import java.util.Scanner;
@@ -23,17 +24,16 @@ public class Main {
 
 		switch (type){
 			case 1:
-				store = new GameStore();
+				store = StoreAbstractFactory.getInstance().create(StoreType.GameStore);
 				break;
 			case 2:
-				store = new FoodStore();
+				store = StoreAbstractFactory.getInstance().create(StoreType.FoodStore);
 				break;
 			case 3:
-				store = new BookStore();
+				store = StoreAbstractFactory.getInstance().create(StoreType.BookStore);
 				break;
 		}
 
-		System.out.println("Store " + store);
 		if (store == null){
 			System.out.println("Store Type Not Found");
 			return;
@@ -42,7 +42,7 @@ public class Main {
 		store.setName(name);
 
 		System.out.println("-----------------------------------");
-		System.out.println("The " + store.getName() + " Was Created");
+		System.out.println("The " + store.getName() + " With Type Of " + store.getClass().getSimpleName() + " Was Created");
 
 
 	}
