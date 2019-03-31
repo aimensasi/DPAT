@@ -8,6 +8,7 @@ public class Store {
 
 	private Integer mId;
 	private String mName;
+	private String type;
 
 	public Store() {
 		mId = mIdCount.incrementAndGet();
@@ -25,4 +26,11 @@ public class Store {
 		mName = name;
 	}
 
+	public String getType() {
+		return type;
+	}
+
+	public void setType(String type) {
+		this.type = type;
+	}
 }

@@ -19,31 +19,34 @@ public class Main {
 		System.out.println("Enter Store Name");
 		String name = scanner.nextLine();
 
-		Store store = null;
+		StoreBuilder builder = null;
 
 		switch (type){
 			case 1:
-				store = new GameStore();
+				builder = new GameStore();
 				break;
 			case 2:
-				store = new FoodStore();
+				builder = new FoodStore();
 				break;
 			case 3:
-				store = new BookStore();
+				builder = new BookStore();
 				break;
 		}
 
-		System.out.println("Store " + store);
-		if (store == null){
+
+		if (builder == null){
 			System.out.println("Store Type Not Found");
 			return;
 		}
 
-		store.setName(name);
+
+		builder.build();
+		builder.setName(name);
+		builder.setType();
+
 
 		System.out.println("-----------------------------------");
-		System.out.println("The " + store.getName() + " Was Created");
-
+		System.out.println("The " + builder.getStore().getName() + "Of Type " + builder.getStore().getType() + " Was Created");
 
 	}
 }
